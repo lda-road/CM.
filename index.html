@@ -9,236 +9,63 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-  <style>
-    /* Reset + base */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    body {
-      margin: 0;
-      font-family: "Las Vegas", sans-serif;
-      background: linear-gradient(-45deg, #0a0a0f, #181831, #2a2049, #0a0a0f);
-      background-size: 400% 400%;
-      animation: pulseBackground 15s ease-in-out infinite;
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    @keyframes pulseBackground {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* HERO */
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 20px;
-      position: relative;
-      z-index: 2;
-    }
-
-    h1 {
-      font-size: 4rem;
-      color: white;
-      margin-bottom: 20px;
-      letter-spacing: 4px;
-    }
-
-    .album-cover {
-      width: 280px;
-      border-radius: 20px;
-      box-shadow: 0 0 40px rgba(255,255,255,0.15);
-      transition: 0.3s ease;
-    }
-
-    .album-cover:hover {
-      transform: scale(1.05);
-    }
-
-    .listen-btn {
-      display: inline-block;
-      background: white;
-      color: black;
-      padding: 12px 30px;
-      border-radius: 30px;
-      font-size: 1.1rem;
-      text-decoration: none;
-      transition: 0.3s ease;
-      margin-top: 20px;
-    }
-
-    .listen-btn:hover {
-      background: #ccc;
-      transform: scale(1.05);
-    }
-
-    /* TRACKLIST */
-    .tracklist {
-      margin: 60px auto;
-      max-width: 700px;
-      text-align: left;
-      background: rgba(255,255,255,0.05);
-      padding: 20px;
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-    }
-
-    details {
-      background: rgba(255,255,255,0.07);
-      padding: 10px;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-
-    details:hover {
-      background: rgba(255,255,255,0.15);
-    }
-
-    summary {
-      font-size: 1.2rem;
-      font-weight: 600;
-      list-style: none;
-      outline: none;
-    }
-
-    summary::marker {
-      display: none;
-    }
-
-    iframe {
-      width: 100%;
-      height: 160px;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
-
-    /* ABOUT SECTION */
-    .about-container {
-      max-width: 700px;
-      margin: 40px auto;
-      background: rgba(255,255,255,0.05);
-      border-radius: 15px;
-      padding: 20px;
-      backdrop-filter: blur(10px);
-      text-align: left;
-    }
-
-    .about-container summary {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: white;
-      cursor: pointer;
-    }
-
-    .about-container summary::after {
-      content: " ▼";
-      transition: transform 0.3s ease;
-    }
-
-    .about-container details[open] summary::after {
-      transform: rotate(-180deg);
-    }
-
-    .about-container p {
-      margin-top: 10px;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      letter-spacing: 0.5px;
-      animation: slideDown 0.4s ease forwards;
-    }
-
-    @keyframes slideDown {
-      0% { opacity: 0; transform: translateY(-10px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <link rel="stylesheet" href="finalStyle.css">
 </head>
-<body>
+ <body>
+  <div class="overlay" id="overlay">
+    <div class="login-box">
+      <h1>SMITHEREENS</h1>
+      <p>Enter credentials to unlock</p>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button id="loginBtn">Unlock</button>
+      <p class="error-msg" id="errorMsg"></p>
+    </div>
+  </div>
 
-  <!-- HERO -->
-  <header id="top">
+  <aside id="aboutSidebar">
+    <button id="closeSidebar">×</button>
+    <h2>About Us</h2>
+    <div class="members">
+      <div class="member"><img src="https://scontent.fmnl16-1.fna.fbcdn.net/v/t1.15752-9/546861410_1317667489224754_5138725263856490945_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeFT29B2rbRTWQ16YHC9l7eNrUMGydmVwyytQwbJ2ZXDLGo26eFXRMifU-c_6lpnrx_wLyRFzmLKm-CjMEUT0Pe_&_nc_ohc=PcTWCI3bO8MQ7kNvwEnsj7z&_nc_oc=Adl2ue5LhLTn9eN9llha5fa0UxLwkAft6RXOpfeQv6w7VBBdvbqZ7KFQo2SIi5A3MYc&_nc_zt=23&_nc_ht=scontent.fmnl16-1.fna&oh=03_Q7cD3gEgfeDX5Irtr6aU8X44EAlOHCbuzIS44EKR6-ji4nEoyw&oe=6924590E" alt="Brylle Mendoza"><p>Brylle Mendoza</p></div>
+      <div class="member"><img src="https://scontent.fmnl16-1.fna.fbcdn.net/v/t1.15752-9/565562664_1328532942270050_5315366963424530263_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEja1BsSWF91ZY2Kal4Oo3q-dKnrbjVLyX50qetuNUvJekZDusDBe3bJ8moc6J2qTWn1e1h8Irjx_AMuIm2jpo4&_nc_ohc=MttM0P6XgusQ7kNvwGKqz-X&_nc_oc=AdkvvBOa0LXMG889VOoplDzk3tpCczUda5SFtMj_AA9iH0jZTzePMI8-ydq0lV2PLFA&_nc_zt=23&_nc_ht=scontent.fmnl16-1.fna&oh=03_Q7cD3gFc1wcO1QGRtO0m7bNBqsHl4CgII8vSc60nxUWrYqDIZw&oe=69243B20" alt="Criselle Enraca"><p>Criselle Enraca</p></div>
+      <div class="member"><img src="https://scontent.fmnl16-1.fna.fbcdn.net/v/t1.15752-9/566493672_1176018824449314_2083475332186993644_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeFEBTFYEHODbMlXvHLZGDKyo3K-HbQqqOKjcr4dtCqo4kszZ9Kbx8cuSosHUlJlN5Xe881VnuxleIfxc-vbrHMK&_nc_ohc=9QMojLFSpfAQ7kNvwGUfLYJ&_nc_oc=AdlKvmv7FRnzdNFMCy4EUKsT0pWmvD7ELZ-sXxktJyfK_oyKtPbgBZzyMEADGSlHRRY&_nc_zt=23&_nc_ht=scontent.fmnl16-1.fna&oh=03_Q7cD3gH8Y_7qNb2vN-TuvCkHu-crC77xn9W606lP45nHGvzlUQ&oe=69244082" alt="Charles Cuerdo"><p>Charles Cuerdo</p></div>
+      <div class="member"><img src="https://scontent.fmnl16-1.fna.fbcdn.net/v/t1.15752-9/566587833_1149027837197323_4217332195354415249_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGwo0frPFUf6exQMMeg-oRUpMNd8YsZ24akw13xixnbhvgCtzwvx_Bstb2nFGmfFgqBAQ6WDfbw4Z8AcWWHl1RF&_nc_ohc=iRcT_nAFXrQQ7kNvwEnhEOE&_nc_oc=AdlV_1ds3_X0VxeslEetFWy2JCH8KBtIK0EbEjsB3fSTFDrShou-a7CCJ8HvvdphKU8&_nc_zt=23&_nc_ht=scontent.fmnl16-1.fna&oh=03_Q7cD3gEs6rhS0WjKn-PzuaahDk1iZyJh1Cmx3w5pPuqQT7T0WA&oe=69245B31" alt="Lourence Del Ayre"><p>Lourence Del Ayre</p></div>
+      <div class="member"><img src="https://scontent.fmnl16-1.fna.fbcdn.net/v/t1.15752-9/546173647_1137853201880592_1069217426311492868_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeFBgE2r4Fh9f0r8Y-AtOVbatgxTFrYfXxu2DFMWth9fGwhQiADTs73g1sw1xDVSrjbVZlhFsORjUu8KigKPQK60&_nc_ohc=jZY2k5MZs8EQ7kNvwFazBFZ&_nc_oc=AdktABWhm4Vsb-HyzMX1LncbOdh0Tuo9XjO5S0dw5GxNHyLu9pxGxt12YrEBgG7FYuc&_nc_zt=23&_nc_ht=scontent.fmnl16-1.fna&oh=03_Q7cD3gElb64uHH5xx_-2MjG09HrTTvwJDA6-mxXmlT1TYFvoog&oe=692437A7" alt="Neo Parducho"><p>Neo Parducho</p></div>
+    </div>
+  </aside>
+
+  <button id="toggleSidebar">☰ About Us</button>
+
+  <header>
     <img class="album-cover" src="https://lh3.googleusercontent.com/xJjSf6jCkUi7zr1Ozi1jRRHpt7aac4w7MGttYj39fyKx7KZAFbOpX153pBMmmwETZMaWVWGSPsTcVzkB=w544-h544-l90-rj" alt="Smithereens Album Cover">
     <h1>SMITHEREENS</h1>
     <a href="#tracklist" class="listen-btn">LISTEN NOW</a>
   </header>
 
-  <!-- TRACKLIST -->
   <section id="tracklist" class="tracklist">
     <h2>Tracklist</h2>
 
-    <details class="track">
-      <summary>1. Glimpse of Us</summary>
-      <iframe src="https://www.youtube.com/embed/OkNx2kt0vV0" allowfullscreen></iframe>
-    </details>
-
-    <details class="track">
-      <summary>2. Feeling Like The End</summary>
-      <iframe src="https://www.youtube.com/embed/-1mgA2wKQF8" allowfullscreen></iframe>
-    </details>
-
-    <details class="track">
-      <summary>3. Die For You</summary>
-      <iframe src="https://www.youtube.com/embed/kIEWJ1ljEro" allowfullscreen></iframe>
-    </details>
-
-    <details class="track">
-      <summary>4. Before The Day Is Over</summary>
-      <iframe src="https://www.youtube.com/embed/UnzFVZ7jMN0" allowfullscreen></iframe>
-    </details>
-
-    <details class="track">
-      <summary>5. Dissolve</summary>
-      <iframe src="https://www.youtube.com/embed/8RrmAIacu64" allowfullscreen></iframe>
-    </details>
-
-    <details class="track">
-      <summary>6. Night Rider</summary>
-      <iframe src="https://www.youtube.com/embed/PuXJD_7VlYo" allowfullscreen></iframe>
-    </details>
-
-    <details class="track">
-      <summary>7. BlahBlahBlah Demo</summary>
-      <iframe src="https://www.youtube.com/embed/j1GJStV4vz8" allowfullscreen></iframe>
-    </details>
-
-    <details class="track">
-      <summary>8. Yukon (Interlude)</summary>
-      <iframe src="https://www.youtube.com/embed/llFdrwnBwLE" allowfullscreen></iframe>
-    </details>
-
-    <details class="track">
-      <summary>9. 1AM Freestyle</summary>
-      <iframe src="https://www.youtube.com/embed/QTxMAycHnos" allowfullscreen></iframe>
-    </details>
-
-    <a href="#top" class="listen-btn" style="margin-top:20px; display:block; text-align:center;">BACK TO TOP</a>
+    <details class="track"><summary>1. Glimpse of Us</summary><iframe src="https://www.youtube.com/embed/OkNx2kt0vV0" allowfullscreen></iframe></details>
+    <details class="track"><summary>2. Feeling Like The End</summary><iframe src="https://www.youtube.com/embed/-1mgA2wKQF8" allowfullscreen></iframe></details>
+    <details class="track"><summary>3. Die For You</summary><iframe src="https://www.youtube.com/embed/kIEWJ1ljEro" allowfullscreen></iframe></details>
+    <details class="track"><summary>4. Before The Day Is Over</summary><iframe src="https://www.youtube.com/embed/UnzFVZ7jMN0" allowfullscreen></iframe></details>
+    <details class="track"><summary>5. Dissolve</summary><iframe src="https://www.youtube.com/embed/8RrmAIacu64" allowfullscreen></iframe></details>
+    <details class="track"><summary>6. Night Rider</summary><iframe src="https://www.youtube.com/embed/PuXJD_7VlYo" allowfullscreen></iframe></details>
+    <details class="track"><summary>7. BlahBlahBlah Demo</summary><iframe src="https://www.youtube.com/embed/j1GJStV4vz8" allowfullscreen></iframe></details>
+    <details class="track"><summary>8. Yukon (Interlude)</summary><iframe src="https://www.youtube.com/embed/llFdrwnBwLE" allowfullscreen></iframe></details>
+    <details class="track"><summary>9. 1AM Freestyle</summary><iframe src="https://www.youtube.com/embed/QTxMAycHnos" allowfullscreen></iframe></details>
   </section>
 
-  <!-- ABOUT -->
   <section class="about-container">
     <details>
       <summary>About Joji & The Album</summary>
-      <p><strong>Joji</strong>, also known as George Miller, is a Japanese singer-songwriter whose introspective and emotional sound has redefined lo-fi and R&B. <em>SMITHEREENS</em> (2022) is his third studio album, capturing heartbreak, vulnerability, and growth in a minimal yet cinematic way.</p>
+      <p><strong>Joji</strong>, also known as George Miller, is a Japanese singer-songwriter whose introspective and emotional sound has redefined lo-fi and R&B. 
+      <em>SMITHEREENS</em> (2022) is his third studio album, capturing heartbreak, vulnerability, and growth in a minimal yet cinematic way.</p>
       <p>The album blends stripped-back piano ballads like “Glimpse of Us” with dreamy textures such as “YUKON (Interlude)”, showcasing Joji’s delicate balance of raw emotion and subtle production.</p>
     </details>
   </section>
 
+  <script src="finalScript.js"></script>
 </body>
 </html>
-
-
-
-
-
-
