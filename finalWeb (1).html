@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Joji – SMITHEREENS</title>
+  <link rel="stylesheet" href="finalStyle.css" />
+</head>
+<body>
+
+  <div id="overlay" class="overlay" aria-hidden="false">
+    <div class="login-box" role="dialog" aria-modal="true" aria-label="Login to site">
+      <h1>SMITHEREENS</h1>
+      <p>Enter username & password to unlock</p>
+      <input id="username" placeholder="Username" autocomplete="username" />
+      <input id="password" type="password" placeholder="Password" autocomplete="current-password" />
+      <button id="loginBtn">Unlock</button>
+      <p class="error-msg" id="errorMsg" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <aside id="aboutSidebar" class="sidebar" aria-hidden="true">
+    <button id="closeAbout" class="close-btn" aria-label="Close About Us">×</button>
+    <h2>About Us</h2>
+    <div class="team-members">
+      <div class="member"><img src="https://scontent.fmnl16-1.fna.fbcdn.net/v/t1.15752-9/546861410_1317667489224754_5138725263856490945_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeFT29B2rbRTWQ16YHC9l7eNrUMGydmVwyytQwbJ2ZXDLGo26eFXRMifU-c_6lpnrx_wLyRFzmLKm-CjMEUT0Pe_&_nc_ohc=PcTWCI3bO8MQ7kNvwEnsj7z&_nc_oc=Adl2ue5LhLTn9eN9llha5fa0UxLwkAft6RXOpfeQv6w7VBBdvbqZ7KFQo2SIi5A3MYc&_nc_zt=23&_nc_ht=scontent.fmnl16-1.fna&oh=03_Q7cD3gEgfeDX5Irtr6aU8X44EAlOHCbuzIS44EKR6-ji4nEoyw&oe=6924590E" alt="Brylle Mendoza"><p>Brylle Mendoza</p></div>
+      <div class="member"><img src="https://scontent.fmnl16-1.fna.fbcdn.net/v/t1.15752-9/565562664_1328532942270050_5315366963424530263_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEja1BsSWF91ZY2Kal4Oo3q-dKnrbjVLyX50qetuNUvJekZDusDBe3bJ8moc6J2qTWn1e1h8Irjx_AMuIm2jpo4&_nc_ohc=MttM0P6XgusQ7kNvwGKqz-X&_nc_oc=AdkvvBOa0LXMG889VOoplDzk3tpCczUda5SFtMj_AA9iH0jZTzePMI8-ydq0lV2PLFA&_nc_zt=23&_nc_ht=scontent.fmnl16-1.fna&oh=03_Q7cD3gFc1wcO1QGRtO0m7bNBqsHl4CgII8vSc60nxUWrYqDIZw&oe=69243B20" alt="Criselle Enraca"><p>Criselle Enraca</p></div>
+      <div class="member"><img src="https://scontent.fmnl16-1.fna.fbcdn.net/v/t1.15752-9/566493672_1176018824449314_2083475332186993644_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeFEBTFYEHODbMlXvHLZGDKyo3K-HbQqqOKjcr4dtCqo4kszZ9Kbx8cuSosHUlJlN5Xe881VnuxleIfxc-vbrHMK&_nc_ohc=9QMojLFSpfAQ7kNvwGUfLYJ&_nc_oc=AdlKvmv7FRnzdNFMCy4EUKsT0pWmvD7ELZ-sXxktJyfK_oyKtPbgBZzyMEADGSlHRRY&_nc_zt=23&_nc_ht=scontent.fmnl16-1.fna&oh=03_Q7cD3gH8Y_7qNb2vN-TuvCkHu-crC77xn9W606lP45nHGvzlUQ&oe=69244082" alt="Charles Cuerdo"><p>Charles Cuerdo</p></div>
+      <div class="member"><img src="https://scontent.fmnl16-1.fna.fbcdn.net/v/t1.15752-9/566587833_1149027837197323_4217332195354415249_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGwo0frPFUf6exQMMeg-oRUpMNd8YsZ24akw13xixnbhvgCtzwvx_Bstb2nFGmfFgqBAQ6WDfbw4Z8AcWWHl1RF&_nc_ohc=iRcT_nAFXrQQ7kNvwEnhEOE&_nc_oc=AdlV_1ds3_X0VxeslEetFWy2JCH8KBtIK0EbEjsB3fSTFDrShou-a7CCJ8HvvdphKU8&_nc_zt=23&_nc_ht=scontent.fmnl16-1.fna&oh=03_Q7cD3gEs6rhS0WjKn-PzuaahDk1iZyJh1Cmx3w5pPuqQT7T0WA&oe=69245B31" alt="Lourence Del Ayre"><p>Lourence Del Ayre</p></div>
+      <div class="member"><img src="https://scontent.fmnl16-1.fna.fbcdn.net/v/t1.15752-9/546173647_1137853201880592_1069217426311492868_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeFBgE2r4Fh9f0r8Y-AtOVbatgxTFrYfXxu2DFMWth9fGwhQiADTs73g1sw1xDVSrjbVZlhFsORjUu8KigKPQK60&_nc_ohc=jZY2k5MZs8EQ7kNvwFazBFZ&_nc_oc=AdktABWhm4Vsb-HyzMX1LncbOdh0Tuo9XjO5S0dw5GxNHyLu9pxGxt12YrEBgG7FYuc&_nc_zt=23&_nc_ht=scontent.fmnl16-1.fna&oh=03_Q7cD3gElb64uHH5xx_-2MjG09HrTTvwJDA6-mxXmlT1TYFvoog&oe=692437A7" alt="Neo Parducho"><p>Neo Parducho</p></div>
+    </div>
+    
+    <div class="about-description">
+      <h3>Why We Made This Website</h3>
+      <p>
+        This webpage was created as a tribute to Joji and his artistry, specifically highlighting the depth and creativity of his album. As a group of students and fans, we were inspired by his unique blend of emotion, storytelling, and musical expression. Through this project, we aimed to showcase not only the technical aspects of web development but also our appreciation for music that resonates deeply with listeners.
+      </p>
+      <p>
+        By dedicating this website to Joji's album, we sought to combine creativity with functionality, transforming our admiration for his work into a meaningful digital experience. This project reflects our shared passion for music, design, and collaboration, serving both as an academic endeavor and a celebration of artistic inspiration.
+      </p>
+    </div>
+  </aside>
+
+  <button id="aboutToggle" class="menu-btn hidden" aria-controls="aboutSidebar" aria-expanded="false">☰ About Us</button>
+
+  <header class="hero" id="hero">
+    <img class="album-cover" src="https://i.scdn.co/image/ab67616d00001e02cdd1a8a427b3f81f4f4f4f7d" alt="SMITHEREENS album cover">
+    <h1>SMITHEREENS</h1>
+    <p class="tagline">Emotional chaos meets lo-fi elegance</p>
+    <a href="#tabsSection" class="listen-btn">LISTEN NOW</a>
+  </header>
+
+  <main id="mainContent" aria-hidden="true">
+    <section id="tabsSection" class="tab-section" aria-live="polite">
+      <div class="tab-buttons" role="tablist" aria-label="Content Tabs">
+        <button class="tab-btn active" data-tab="tracks" role="tab" aria-selected="true">Tracklist</button>
+        <button class="tab-btn" data-tab="aboutJoji" role="tab">About Joji</button>
+        <button class="tab-btn" data-tab="aboutAlbum" role="tab">About Album</button>
+      </div>
+
+      <div id="tracks" class="tab-content active" role="tabpanel">
+        <h2>Tracklist</h2>
+
+        <details class="track"><summary>1. Glimpse of Us</summary>
+          <iframe src="https://www.youtube.com/embed/OkNx2kt0vV0" allowfullscreen></iframe>
+        </details>
+
+        <details class="track"><summary>2. Feeling Like The End</summary>
+          <iframe src="https://www.youtube.com/embed/-1mgA2wKQF8" allowfullscreen></iframe>
+        </details>
+
+        <details class="track"><summary>3. Die For You</summary>
+          <iframe src="https://www.youtube.com/embed/kIEWJ1ljEro" allowfullscreen></iframe>
+        </details>
+
+        <details class="track"><summary>4. Before The Day Is Over</summary>
+          <iframe src="https://www.youtube.com/embed/UnzFVZ7jMN0" allowfullscreen></iframe>
+        </details>
+
+        <details class="track"><summary>5. Dissolve</summary>
+          <iframe src="https://www.youtube.com/embed/8RrmAIacu64" allowfullscreen></iframe>
+        </details>
+
+        <details class="track"><summary>6. Night Rider</summary>
+          <iframe src="https://www.youtube.com/embed/PuXJD_7VlYo" allowfullscreen></iframe>
+        </details>
+
+        <details class="track"><summary>7. BlahBlahBlah Demo</summary>
+          <iframe src="https://www.youtube.com/embed/j1GJStV4vz8" allowfullscreen></iframe>
+        </details>
+
+        <details class="track"><summary>8. Yukon (Interlude)</summary>
+          <iframe src="https://www.youtube.com/embed/llFdrwnBwLE" allowfullscreen></iframe>
+        </details>
+
+        <details class="track"><summary>9. 1AM Freestyle</summary>
+          <iframe src="https://www.youtube.com/embed/QTxMAycHnos" allowfullscreen></iframe>
+        </details>
+      </div>
+
+      <div id="aboutJoji" class="tab-content" role="tabpanel" hidden>
+        <h2>About Joji</h2>
+        <img class="about-img" src="https://i.scdn.co/image/ab67616d00001e028da6404284573219a9b1e2f4" alt="Joji portrait">
+        <p>
+          George Kusunoki Miller (ジョージ・楠木・ミラー, Jōji Kusunoki Mirā), known professionally as Joji and formerly as Filthy Frank and Pink Guy, is a Japanese-Australian singer, songwriter, rapper, and former Internet personality. His music has been described as a mix between R&B, lo-fi, and trip-hop.
+        </p>
+        <p>
+          Miller created The Filthy Frank Show on YouTube in 2011 while he was still living in Japan, gaining recognition for playing oddball characters on the comedy channels "TVFilthyFrank", "TooDamnFilthy", and "DizastaMusic". He began producing Filthy Frank videos in 2012, during his college enrollment in the United States. The channels, which featured comedy hip hop, rants, extreme challenges, and ukulele and dance performances, are noted for their shock humor and prolific virality. Miller popularised the Harlem Shake, an Internet meme that contributed to the commercial success of Baauer's song "Harlem Shake" and led him to further prominence on YouTube. As Pink Guy, he released two comedy studio albums, Pink Guy and Pink Season, as well as an extended play, between 2014 and 2017.
+        </p>
+        <p>
+          In late 2017, Miller ended The Filthy Frank Show to pursue a music career under the name "Joji", the Japanese version of his first name. He signed with 88Rising and 12Tone Music Group to release his first two studio albums, Ballads 1 (2018) and Nectar (2020), both of which peaked at number three on the Billboard 200 and spawned the singles "Slow Dancing in the Dark" and "Sanctuary". Both songs entered the Billboard Hot 100 and ARIA Charts, while his 2022 single, "Glimpse of Us", peaked at number eight on the former and atop the latter, became his highest-charting song, and preceded his third album Smithereens (2022).
+        </p>
+      </div>
+
+      <div id="aboutAlbum" class="tab-content" role="tabpanel" hidden>
+        <h2>About the Album</h2>
+        <p>
+          SMITHEREENS is the third studio album by Japanese-Australian singer-songwriter Joji, released on 4 November 2022, through 88rising and Warner Records. It was preceded by the singles "Glimpse of Us" and "Yukon (Interlude)". Joji toured North America in promotion of the record from September 2022 to 2023.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="finalJS.js"></script>
+</body>
+</html>
